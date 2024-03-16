@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"
+      rel="stylesheet"
+    /> -->
+    <title>Exercise</title>
+  </head>
+  <body>
+    <nav>
+      <span class="logo">HealthDiary</span>
+      <button class="menu-toggle">☰</button>
+      <ul class="menu">
+          <li class="dropdown">
+              <a href="diary.html">Home</a>
+            </li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <div class="dropdown-content">
+            <a href="exercise.html">Exercise</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="diaries.html">Diary Entries</a>
+            <a href="medication.html">Medications</a>
+            <a href="hrv.html">HRV Measurements</a>
+          </div>
+        </li>
+        <li><a href="settings.html">Settings</a></li>
+        <li class="logout"><a href="index.html">Log Out</a></li>
+      </ul>
+    </nav>
+    <div class="medication-backround">
+      <form id="exercise-form">
+        <h3>Add New Medication</h3>
+        
+        <label for="name">Medication Name:</label>
+        <input type="text" id="name" name="name" minlength="3" maxlength="30" /><br /><br />
+
+        <label for="dosage">Dosage:</label>
+        <input type="text" id="dosage" name="dosage" minlength="1" maxlength="10" required /><br /><br />
+        
+        <label for="dosage">Frequency:</label>
+        <input type="text" id="dosage" name="frequency" minlength="1" maxlength="20" required /><br /><br />
+        
+        <label for="date">Start Date:</label>
+        <input type="date" id="date" name="start_date" required /><br /><br />
+
+        <label for="date">End Date:</label>
+        <input type="date" id="date" name="end_date" /><br /><br />
+
+        <button type="submit">Add Medication</button>
+      </form>
+      <button id="fetch-data">Get your Medications</button>
+      <div class="table-container">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Dosage</th>
+            <th>Frequency</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+      </table>
+    </div>
+    </div>
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">×</span>
+        <form id="edit-form">
+          <h3>Edit Medication Entry</h3>
+          <input type="hidden" id="edit-entry-id" name="edit-entry-id" required />
+
+          <label for="edit-name">Name:</label>
+          <input type="text" id="edit-name" name="edit-name" minlength="3" maxlength="30" required /><br /><br />
+
+          <label for="edit-dosage">Dosage:</label>
+          <input type="text" id="edit-dosage" name="edit-dosage" minlength="1" maxlength="10" required /><br /><br />
+
+          <label for="edit-frequency">Frequency:</label>
+          <input type="text" id="edit-frequency" name="edit-frequency" minlength="1" maxlength="20" required /><br /><br />
+          <label for="edit-date">Start Date:</label>
+          <input type="date" id="edit-start-date" name="edit-start-date" required /> <br /><br />
+          <label for="edit-date">End Date:</label>
+          <input type="date" id="edit-end-date" name="edit-end-date" required /> <br /><br />
+          <button type="submit">Update Medication Entry</button>
+          <button type="button" id="delete-entry" class="delete-button">Delete Medication Entry</button>
+        </form>
+      </div>
+    </div>
+    <div id="toast-container"></div>
+    <script type="module" src="/medication.js"></script>
+  </body>
+</html>

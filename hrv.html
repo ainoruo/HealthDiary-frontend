@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>HRV</title>
+  </head>
+  <body>
+    <nav>
+      <span class="logo">HealthDiary</span>
+      <button class="menu-toggle">☰</button>
+      <ul class="menu">
+          <li class="dropdown">
+              <a href="diary.html">Home</a>
+            </li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <div class="dropdown-content">
+            <a href="exercise.html">Exercise</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="diaries.html">Diary Entries</a>
+            <a href="medication.html">Medications</a>
+            <a href="hrv.html">HRV Measurements</a>
+          </div>
+        </li>
+        <li><a href="settings.html">Settings</a></li>
+        <li class="logout"><a href="index.html">Log Out</a></li>
+      </ul>
+    </nav>
+    <div class="hrv-backround">
+      <form id="exercise-form">
+        <h3>Add New HRV Measurement</h3>
+        <label for="date">Measurement Date:</label>
+        <input
+          type="date"
+          id="measurement_date"
+          name="measurement_date"
+          required
+        /><br /><br />
+
+        <label for="time_of_day">Time of Day:</label>
+        <input
+          type="time"
+          id="time_of_day"
+          name="time_of_day"
+          required
+        /><br /><br />
+
+        <label for="hrv_value">HRV Value:</label>
+        <input
+          type="text"
+          id="hrv_value"
+          name="hrv_value"
+          maxlength="3"
+          required
+        /><br /><br />
+        <label for="notes">Notes:</label><br />
+        <input type="text"
+          id="notes"
+          name="notes"
+          placeholder="Example: Measured at morning"
+          minlength="0" maxlength="300"
+        ></input
+        ><br /><br />
+        <input type="hidden" id="created_at" name="created_at" value="" />
+        <button type="submit">Add HRV Measurement</button>
+      </form>
+      <button id="fetch-data">Get Your HRV Measurements</button>
+      <div class="table-container">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>HRV Value</th>
+              <th>Notes</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody class="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">×</span>
+        <form id="edit-form">
+          <h3>Edit Exercise Entry</h3>
+          <input type="hidden" id="edit-entry-id" name="edit-entry-id" required />
+
+          <label for="edit-date">Measurement Date:<label>
+          <input type="date" id="edit-date" name="edit-date" required /><br /><br />
+
+          <label for="edit-time-of-day">Time of Day:</label>
+          <input type="time" id="edit-time-of-day" name="edit-time-of-day" required /><br /><br />
+
+          <label for="edit-hrv-value">HRV Value:</label>
+          <input type="text" id="edit-hrv-value" name="edit-hrv-value" maxlength="3" required /><br /><br />
+          
+          <label for="edit-notes">Notes:</label>
+          <input type="text" name="edit-notes" id="edit-notes"  minlength="0" maxlength="300"></textarea>
+          
+          <button type="submit">Update HRV Measurement</button>
+          <button type="button" id="delete-entry" class="delete-button">Delete Entry</button>
+        </form>
+      </div>
+    </div>
+    <div id="toast-container"></div>
+    <script type="module" src="/hrv.js"></script>
+  </body>
+</html>

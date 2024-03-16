@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>HealthDiary</title>
+  </head>
+  <body>
+    <nav>
+      <span class="logo">HealthDiary</span>
+      <button class="menu-toggle">☰</button>
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="diary.html">Home</a>
+        </li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <div class="dropdown-content">
+            <a href="exercise.html">Exercise</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="diaries.html">Diary Entries</a>
+            <a href="medication.html">Medications</a>
+            <a href="hrv.html">HRV Measurements</a>
+          </div>
+        </li>
+        <li><a href="settings.html">Settings</a></li>
+        <li class="logout"><a href="index.html">Log Out</a></li>
+      </ul>
+    </nav>
+    <div class="settings-backround">
+      <form id="settings-form">
+        <h3>Change Username:</h3>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <h3>Change Password:</h3>
+        <label for="new-password">New Password:</label>
+        <input type="password" name="new-password" id="new-password" required />
+
+        <h3>Confirm Password:</h3>
+        <label for="confirm-password">Confirm New Password:</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        />
+        <h3>Change Email:</h3>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <button id="save-changes">Save Changes</button>
+      </form>
+      <form id="delete-form">
+        <h3>Delete User:</h3>
+        <label for="delete-confirm">Type "delete user" to confirm</label>
+        <input type="text" id="delete-confirm" name="delete-confirm" required>
+        <button id="delete-user" class="delete-user-button">Delete user</button>
+      </form>
+    </div>
+    <div id="toast-container"></div>
+    <script type="module" src="/settings.js"></script>
+  </body>
+</html>

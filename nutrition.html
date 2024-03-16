@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"
+      rel="stylesheet"
+    /> -->
+    <title>Nutrition</title>
+  </head>
+  <body>
+    <nav>
+      <span class="logo">HealthDiary</span>
+      <button class="menu-toggle">☰</button>
+      <ul class="menu">
+          <li class="dropdown">
+              <a href="diary.html">Home</a>
+            </li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <div class="dropdown-content">
+            <a href="exercise.html">Exercise</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="diaries.html">Diary Entries</a>
+            <a href="medication.html">Medications</a>
+            <a href="hrv.html">HRV Measurements</a>
+          </div>
+        </li>
+        <li><a href="settings.html">Settings</a></li>
+        <li class="logout"><a href="index.html">Log Out</a></li>
+      </ul>
+    </nav>
+    <div class="nutrition-backround">
+      <form id="exercise-form">
+        <h3>Add New Nutrition Entry</h3>
+
+        <label for="date">Date:</label>
+        <input type="date" id="entry_date" name="entry_date" required /><br /><br />
+        
+        <label for="name">Calories Consumed:</label>
+        <input type="text" id="calories_consumed" name="calories_consumed" minlength="1" maxlength="15" required /><br /><br />
+
+        <label for="protein">Protein Grams:</label>
+        <input type="text" id="protein_grams" name="protein_grams" minlength="1" maxlength="15" required /><br /><br />
+        
+        <label for="carbs">Carbohydrates Grams:</label>
+        <input type="text" id="carbohydrates_grams" name="carbohydrates_grams" minlength="1" maxlength="15" required /><br /><br />
+        
+        <label for="fats">Fat Grams:</label>
+        <input type="text" id="fat_grams" name="fat_grams" minlength="1" maxlength="15" required /><br /><br />
+
+        <label for="notes">Notes:</label>
+        <input type="text" id="notes" name="notes" minlength="1" maxlength="300" required/><br /><br />
+
+        <button type="submit">Add Nutrition Entry</button>
+      </form>
+      <button id="fetch-data">Get your Nutrition Entries</button>
+      <div class="table-container">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Cals</th>
+            <th>Protein</th>
+            <th>Carbs</th>
+            <th>Fats</th>
+            <th>Notes</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+      </table>
+    </div>
+    </div>
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">×</span>
+        <form id="edit-form">
+          <h3>Edit Nutrition Entry</h3>
+          <input type="hidden" id="edit-entry-id" name="edit-entry-id" required />
+
+          <label for="edit-date">Date:</label>
+          <input type="date" id="edit-date" name="edit-date" required /><br /><br />
+
+          <label for="edit-calories-consumed">Calories Consumed:</label>
+          <input type="text" id="edit-calories-consumed" name="edit-calories-consumed" minlength="1" maxlength="15" required /><br /><br />
+
+          <label for="edit-carbohydrates-grams">Carbohydrates Grams:</label>
+          <input type="text" id="edit-carbohydrates-grams" name="edit-carbohydrates-grams" minlength="1" maxlength="15" required /><br /><br />
+          
+          <label for="edit-protein-grams">Protein Grams:</label>
+          <input type="text" id="edit-protein-grams" name="edit-protein-grams" minlength="1" maxlength="15" required /> <br /><br />
+          
+          <label for="edit-fat-grams">Fat Grams:</label>
+          <input type="text" id="edit-fat-grams" name="edit-fat-grams" minlength="1" maxlength="15" required /> <br /><br />
+          
+          <label for="edit-notes">Notes:</label>
+          <input type="text" id="edit-notes" name="edit-notes" minlength="1" maxlength="300"/><br /><br />
+
+          <button type="submit">Update Nutrition</button>
+          <button type="button" id="delete-entry" class="delete-button">Delete Entry</button>
+        </form>
+      </div>
+    </div>
+    <div id="toast-container"></div>
+    <script type="module" src="/nutrition.js"></script>
+  </body>
+</html>

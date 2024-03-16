@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>HealthDiary</title>
+  </head>
+  <body>
+    <nav>
+      <span class="logo">HealthDiary</span>
+      <button class="menu-toggle">☰</button>
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <div class="dropdown-content">
+            <a href="exercise.html">Exercise</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="diaries.html">Diary Entries</a>
+            <a href="medication.html">Medications</a>
+            <a href="hrv.html">HRV Measurements</a>
+          </div>
+        </li>
+        <li><a href="settings.html">Settings</a></li>
+        <li class="logout"><a href="index.html">Log Out</a></li>
+      </ul>
+    </nav>
+    
+    <div class="user">
+      Welcome to your HealthDiary, user <span id="name"></span>!
+    </div>
+    <h4>Choose Category:</h4>
+    <div class="img-container">
+      <div class="img-wrapper" onclick="window.location.href='exercise.html';">
+        <img src="img/exercise.png" alt="Cardiovascular Health" />
+        <div class="img-text">Exercise</div>
+      </div>
+      <div
+        class="img-wrapper"
+        onclick="window.location.href='nutrition.html';"
+      >
+        <img src="img/food.png" alt="Nutrition" />
+        <div class="img-text">Nutrition</div>
+      </div>
+      <div
+        class="img-wrapper"
+        onclick="window.location.href='diaries.html';"
+      >
+        <img src="img/diary.png" alt="Diary" />
+        <div class="img-text">Diary Entries</div>
+      </div>
+      <div
+      class="img-wrapper"
+      onclick="window.location.href='medication.html';"
+    >
+      <img src="img/medications.png" alt="Medications" />
+      <div class="img-text">Medications</div>
+    </div>
+      <div
+        class="img-wrapper"
+        onclick="window.location.href='hrv.html';"
+      >
+        <img src="img/relax.png" alt="hrv" />
+        <div class="img-text">HRV Measurements</div>
+      </div>
+    </div>
+    <div id="toast-container"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
